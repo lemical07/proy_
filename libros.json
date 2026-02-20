@@ -1,0 +1,14 @@
+[
+    {
+        "Nombre": "The WolfMan",
+        "Autor": "Wholk A",
+        "Genero": "Fantasía",
+        "Puntaje": 10.0
+    },
+    {
+        "Nombre": "El Rey",
+        "Autor": "Joseph J",
+        "Genero": "Drama",
+        "Puntaje": 5.0
+    }
+]
