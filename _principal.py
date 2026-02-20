@@ -41,7 +41,7 @@ def añadir():
         
         pelicula = {
             "Nombre": nombre, 
-            "Autor": autor,
+            "Director": autor,
             "Genero": genero,
             "Puntaje": puntaje
             }
