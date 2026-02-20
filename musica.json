@@ -4,5 +4,11 @@
         "Autor": "McKindell",
         "Genero": "Pop",
         "Puntaje": 8.0
+    },
+    {
+        "Nombre": "Forever Alone",
+        "Autor": "Allan Whokl",
+        "Genero": "Eléctrónica",
+        "Puntaje": 10.0
     }
 ]
