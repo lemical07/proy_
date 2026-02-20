@@ -121,7 +121,7 @@ def busElem():
     mostrar_elementos(res_musica, "música")
     input("\nPresiona Enter para continuar...")
 
-# 🆕 EDITAR COMPLETO
+# Editar
 
 def edElem():
     menu_editar()
@@ -210,7 +210,7 @@ def edElem():
     elif opc == 0:
         return
 
-# 🆕 ELIMINAR COMPLETO
+# Eliminar Elemento
 def eliminarElem():
     menu_eliminar()
     separador()
@@ -257,7 +257,7 @@ def eliminarElem():
     elif opc == 0:
         return
 
-# 🆕 VER POR CATEGORÍA
+# Ver por categoría
 def verCategoria():
     menu_categorias()
     separador()
@@ -275,7 +275,7 @@ def verCategoria():
     elif opc == 0:
         return
 
-# 🆕 GUARDAR/CARGAR
+# Guardar/Cargar
 def guardarCargar():
     menu_mixto()
     separador()
