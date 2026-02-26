@@ -116,3 +116,4 @@ def cargar_estadisticas():
     global estadistica
     estadistica.clear()
     estadistica.extend(leer_json("estadistica.json"))
+

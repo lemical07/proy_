@@ -321,8 +321,8 @@ def verEstadisticas():
     separador()
     if opc == 1:
         cargar_estadisticas()
-        print("Total de elementos en la colección: ", len(libros) + len(peliculas) + len(musicas))
-        guardar_estadistica()
+        t_Elem=print("Total de elementos en la colección: ", len(libros) + len(peliculas) + len(musicas))
+        print("Dato Actualizado")
     elif opc == 2:
         cargar_estadisticas(9)
         print("Total de libros: ", len(libros))
