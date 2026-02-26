@@ -109,4 +109,10 @@ def mostrar_elementos(elementos, tipo):
         print(f"  Género: {elem['Genero']} | Puntaje: {elem['Puntaje']}")
         print("-" * 60)
 
+def guardar_estadistica():
+    escribir_json("estadistica.json",estadistica)
 
+def cargar_estadisticas():
+    global estadistica
+    estadistica.clear()
+    estadistica.extend(leer_json("estadistica.json"))

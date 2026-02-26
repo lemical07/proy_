@@ -1,5 +1,5 @@
 from _menu import menu_principal, separador, pedir_opcion
-from _principal import añadir, verElem, busElem, edElem, eliminarElem, verCategoria, guardarCargar
+from _principal import añadir, verElem, busElem, edElem, eliminarElem, verCategoria, guardarCargar, verEstadisticas
 from _datos import cargar_libros, cargar_peliculas, cargar_musicas, guardar_libros, guardar_peliculas, guardar_musicas
 # Carga inicial
 cargar_libros()
@@ -27,6 +27,8 @@ while True:
         verCategoria()
     elif opcion == 7:
         guardarCargar()
+    elif opcion==8:
+        verEstadisticas()
     elif opcion == 0:
         print("¡Salida exitosa!")
         guardar_libros()

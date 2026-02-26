@@ -320,12 +320,17 @@ def verEstadisticas():
     opc = pedir_opcion()
     separador()
     if opc == 1:
+        cargar_estadisticas()
         print("Total de elementos en la colección: ", len(libros) + len(peliculas) + len(musicas))
+        guardar_estadistica()
     elif opc == 2:
+        cargar_estadisticas(9)
         print("Total de libros: ", len(libros))
         print("Total de películas: ", len(peliculas))
         print("Total de música: ", len(musicas))
+        guardar_estadistica()
     elif opc == 3:
+        cargar_estadisticas()
         total_elementos = len(libros) + len(peliculas) + len(musicas)
         if total_elementos > 0:
             promedio_libros = sum(libro['Puntaje'] for libro in libros) / len(libros) if libros else 0
@@ -335,5 +340,6 @@ def verEstadisticas():
             print(f"Promedio general de la colección: {promedio_general:.2f}")
         else:
             print("No hay elementos para calcular el promedio.")
+        guardar_estadistica()
     elif opc == 0:
         return
