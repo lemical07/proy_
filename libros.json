@@ -1,32 +1,9 @@
 [
     {
-        "Nombre": "The WolfMan",
-        "Autor": "Wholk A",
+        "ID": 1,
+        "Nombre": "AJram",
+        "Autor": "Kell W",
         "Genero": "Fantasía",
         "Puntaje": 10.0
-    },
-    {
-        "Nombre": "El Rey",
-        "Autor": "Joseph J",
-        "Genero": "Drama",
-        "Puntaje": 5.0
-    },
-    {
-        "Nombre": "El nombre del Viento",
-        "Autor": "Patrick Rothfuss",
-        "Genero": "Fantasía",
-        "Puntaje": 10.0
-    },
-    {
-        "Nombre": "Seis Cuervos",
-        "Autor": "Leigh Bardugo",
-        "Genero": "Fantasía Juvenil",
-        "Puntaje": 9.0
-    },
-    {
-        "Nombre": "El resplandor",
-        "Autor": "Stephen King",
-        "Genero": "Terror Psicológico",
-        "Puntaje": 8.0
     }
 ]

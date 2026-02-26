@@ -1,14 +1,9 @@
 [
     {
+        "ID": 1,
         "Nombre": "Teen Wolf",
-        "Autor": "Jhoan Marck",
+        "Autor": "Caster All",
         "Genero": "Fantasía",
-        "Puntaje": 10.0
-    },
-    {
-        "Nombre": "High",
-        "Director": "Edem Mcark",
-        "Genero": "Terror",
         "Puntaje": 10.0
     }
 ]

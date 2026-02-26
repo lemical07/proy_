@@ -22,50 +22,28 @@ def añadir():
         autor = input("Autor: ")
         genero = input("Género: ")
         puntaje = validar_puntaje()
-        
-        libro = {
-            "Nombre": nombre, 
-            "Autor": autor,
-            "Genero": genero,
-            "Puntaje": puntaje
-            }
-        libros.append(libro)
-        guardar_libros()
-        print(f"✅ Libro '{nombre}' añadido!")
+        id_nuevo = agregar_libro(nombre, autor, genero, puntaje) 
+        print(f"✅ Libro '{nombre}' añadido con ID {id_nuevo}!")
         
     elif opc == 2:  # Película
         nombre = input("Nombre de la película: ")
         autor = input("Director: ")
         genero = input("Género: ")
         puntaje = validar_puntaje()
-        
-        pelicula = {
-            "Nombre": nombre, 
-            "Director": autor,
-            "Genero": genero,
-            "Puntaje": puntaje
-            }
-        peliculas.append(pelicula)
-        guardar_peliculas()
-        print(f"✅ Película '{nombre}' añadida!")
+        id_nuevo = agregar_pelicula(nombre, autor, genero, puntaje)
+        print(f"✅ Película '{nombre}' añadida con ID {id_nuevo}!")
         
     elif opc == 3:  # Música
         nombre = input("Nombre de la música: ")
         autor = input("Artista: ")
         genero = input("Género: ")
         puntaje = validar_puntaje()
+        id_nuevo = agregar_musica(nombre, autor, genero, puntaje)
+        print(f"✅ Música '{nombre}' añadida con ID {id_nuevo}!")
         
-        musica_item = {
-            "Nombre": nombre, 
-            "Autor": autor, 
-            "Genero": genero, 
-            "Puntaje": puntaje
-            }
-        musicas.append(musica_item)
-        guardar_musicas()
-        print(f"✅ Música '{nombre}' añadida!")
     elif opc == 0:
         return
+
 
 def verElem():
     menu_ver()
@@ -242,20 +220,62 @@ def eliminarElem():
         else:
             print("❌ Elemento no encontrado")
             
-    elif opc == 2:  # Por ID
-        categoria = input("Categoría (1=libros, 2=pelis, 3=musica): ")
-        id_elem = int(input("ID a eliminar: "))
+    
+    if opc == 2:  
+        categoria = input("\n📂 Categoría (1=libros, 2=películas, 3=música): ")
+        try:
+            id_a_eliminar = int(input("🗑️ ID a eliminar: "))
+        except ValueError:
+            print("❌ ID debe ser un número")
+            input("Presiona Enter...")
+            return
+            
+        eliminado = False
+        if categoria == "1":
+            cargar_libros()
+            for i, libro in enumerate(libros):
+                if libro['ID'] == id_a_eliminar:
+                    print(f"🗑️ Eliminando LIBRO: {libro['Nombre']} (ID {libro['ID']})")
+                    libros.pop(i)
+                    guardar_libros()
+                    eliminado = True
+                    break
+            if not eliminado:
+                print("❌ ID no encontrado en libros")
+                
+        elif categoria == "2":
+            cargar_peliculas()
+            for i, peli in enumerate(peliculas):
+                if peli['ID'] == id_a_eliminar:
+                    print(f"🗑️ Eliminando PELÍCULA: {peli['Nombre']} (ID {peli['ID']})")
+                    peliculas.pop(i)
+                    guardar_peliculas()
+                    eliminado = True
+                    break
+            if not eliminado:
+                print("❌ ID no encontrado en películas")
+                
+        elif categoria == "3":
+            cargar_musicas()
+            for i, musica in enumerate(musicas):
+                if musica['ID'] == id_a_eliminar:
+                    print(f"🗑️ Eliminando MÚSICA: {musica['Nombre']} (ID {musica['ID']})")
+                    musicas.pop(i)
+                    guardar_musicas()
+                    eliminado = True
+                    break
+            if not eliminado:
+                print("❌ ID no encontrado en música")
+        else:
+            print("❌ Categoría inválida (usa 1, 2 o 3)")
+            
+        if eliminado:
+            print("✅ Elemento eliminado correctamente")
+        input("\nPresiona Enter para continuar...")
         
-        if categoria == "1" and libros:
-            if 1 <= id_elem <= len(libros):
-                eliminado = libros.pop(id_elem - 1)
-                guardar_libros()
-                print(f"✅ {eliminado['Nombre']} eliminado")
-            else:
-                print("❌ ID inválido")
-        print("❌ No hay elementos")
     elif opc == 0:
         return
+
 
 # Ver por categoría
 def verCategoria():
@@ -291,5 +311,29 @@ def guardarCargar():
         cargar_peliculas()
         cargar_musicas()
         print("📂 ¡Colección cargada!")
+    elif opc == 0:
+        return
+#ver Estadísticas
+def verEstadisticas():
+    menu_est()
+    separador()
+    opc = pedir_opcion()
+    separador()
+    if opc == 1:
+        print("Total de elementos en la colección: ", len(libros) + len(peliculas) + len(musicas))
+    elif opc == 2:
+        print("Total de libros: ", len(libros))
+        print("Total de películas: ", len(peliculas))
+        print("Total de música: ", len(musicas))
+    elif opc == 3:
+        total_elementos = len(libros) + len(peliculas) + len(musicas)
+        if total_elementos > 0:
+            promedio_libros = sum(libro['Puntaje'] for libro in libros) / len(libros) if libros else 0
+            promedio_peliculas = sum(peli['Puntaje'] for peli in peliculas) / len(peliculas) if peliculas else 0
+            promedio_musica = sum(musica['Puntaje'] for musica in musicas) / len(musicas) if musicas else 0
+            promedio_general = (promedio_libros + promedio_peliculas + promedio_musica) / 3
+            print(f"Promedio general de la colección: {promedio_general:.2f}")
+        else:
+            print("No hay elementos para calcular el promedio.")
     elif opc == 0:
         return

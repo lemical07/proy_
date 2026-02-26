@@ -11,6 +11,7 @@ def menu_principal():
     5. Eliminar un Elemento
     6. Ver Elementos por Categoría
     7. Guardar y Cargar Colección
+    8. Estadísticas
     0. Salir
     """
     print(menu1)
@@ -104,6 +105,19 @@ def menu_mixto():
     0. Regresar al Menú Principal
     """
     print(menu8)
+
+def menu_est():
+    menu9 = """
+    ================================
+              Estadísticas
+    ================================
+    1.Total de elementos en la colección
+    2.Total de elementos por categoría
+    3.Promedio general de la colección
+    0. Regresar al Menú Principal
+
+"""
+    print(menu9)
 
 def separador():
     print("=" * 50)

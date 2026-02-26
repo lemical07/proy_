@@ -1,14 +1,9 @@
 [
     {
-        "Nombre": "Wolf as me",
-        "Autor": "McKindell",
-        "Genero": "Pop",
-        "Puntaje": 8.0
-    },
-    {
-        "Nombre": "Forever Alone",
-        "Autor": "Allan Whokl",
-        "Genero": "Eléctrónica",
+        "ID": 1,
+        "Nombre": "Hurricane",
+        "Autor": "Rad-D",
+        "Genero": "HardStyle",
         "Puntaje": 10.0
     }
 ]
